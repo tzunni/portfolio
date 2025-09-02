@@ -1,0 +1,223 @@
+#app {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  display: flex;
+  flex: 1;
+}
+
+#darken {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none; /* Ensures it doesn't block interactions */
+  z-index: 1; /* Ensure it's above the background but below other content */
+  background-image: linear-gradient(rgba(0,0,0,0) 50%, rgba(0,0,0,0.1) 50%), 
+                    linear-gradient(90deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.1) 50%);
+  background-size: 100% 4px, 4px 100%;
+}
+
+body {
+  background-image: url(./assets/tokyoc.jpg);
+  background-size: cover;
+  background-position: 0% 40%;
+}
+
+body, html {
+  --blue: #00023f;
+  --lightblue: #000ff7;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+@media screen{
+  #darken {
+    animation: scanlines infinite 55s linear ;
+  }
+} 
+@keyframes scanlines {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -10px;
+  }
+}
+
+#label{
+  position: absolute;
+  background-color: #1c209b;
+  top: 4vh;
+  left: 10vw;
+  padding: 1vh 1vw;
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 72px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  z-index: 10;
+  border-radius: 17px;
+  border: 2px solid var(--lightblue);
+}
+
+#top-bar{
+  display: flex;
+  gap: 0.8vw;
+  height: 16.8vh;
+  width: 100vw;
+}
+#bottom-bar{
+  display: flex;
+  gap: 0.7vw;
+  height: 22.2vh;
+  width: 100vw;
+}
+.bar{
+  opacity: 0.95;
+  z-index: 2;;
+}
+#tbox1{
+  background-color: var(--blue);
+  width: 17.5vw;
+  border-bottom: 5px solid var(--lightblue);
+  border-right: 5px solid var(--lightblue);
+  border-bottom-right-radius: 15px;
+}
+#tbox2{
+  background-color: var(--blue);
+  width: 90vw;
+  border-bottom: 5px solid var(--lightblue);
+  border-left: 5px solid var(--lightblue);
+  border-bottom-left-radius: 15px;
+}
+#bbox1{
+  background-color: var(--blue);
+  width: 30vw;
+  border-top: 5px solid var(--lightblue);
+  border-right: 5px solid var(--lightblue);
+  border-top-right-radius: 15px;
+}
+#bb1-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 9vw;
+  height: 100%;
+  width: 100%;
+  gap: 2.5vh;
+}
+#bb1-text{
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 40px;
+  color: white;
+  padding-left: 3vw;
+  padding-right: 1vw;
+  margin: 0;
+}
+#bb1-line{
+  background: linear-gradient(to right, transparent, white 20%, white 70%, transparent);
+  height: 2px;
+  width: 14vw;
+  margin-right: 1vw;
+}
+#bb1-subtext{
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 200;
+  font-size: 32px;
+  color: white;
+  padding-top: 0.5vh;
+  padding-left: 3vw;
+  padding-right: 1vw;
+  margin: 0;
+}
+#player{
+  position: absolute;
+  background-color: black;
+  height: 10vh;
+  width: 9vw;
+  bottom: 20vh;
+  left: 50vw;
+  z-index: 5;
+  opacity: 0.87;
+  --s: 30px;
+  clip-path: polygon(var(--s) 0, 100% 0, 100% 100%, 0 100%, 0 var(--s));
+}
+#player-icon{
+  position: absolute;
+  width: 25vw;
+  height: auto;
+  bottom: 22vh;
+  left: 46vw;
+  z-index: 4;
+}
+#player-text{
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 32px;
+  color: white;
+  text-align: center;
+  padding-top: 1.5vh;
+  margin: 0;
+}
+#player-line{
+  background-color: gray;
+  height: 2px;
+  width: 5vw;
+  margin: 0 auto;
+  margin-top: 0.5vh;
+  padding-bottom: 0;
+}
+.player-subtext{
+  font-family: 'Roboto';
+  font-weight: 200;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: start;
+  color: rgb(217, 255, 0);
+  margin: 0;
+}
+
+#bbox2{
+  background-color: var(--blue);
+  width: 90vw;
+  border-top: 5px solid var(--lightblue);
+  border-left: 5px solid var(--lightblue);
+  border-top-left-radius: 15px;
+}
+#bb2-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+#bb2-text{
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 32px;
+  color: white;
+  padding-top: 2.5vh;
+  padding-left: 3vw;
+  padding-right: 1vw;
+  margin: 0;
+}

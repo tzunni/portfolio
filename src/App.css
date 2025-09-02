@@ -1,0 +1,83 @@
+#main-content{
+  --cursor: rgb(255, 174, 0);
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  z-index: 5;
+}
+#menu-bar{
+  position: relative;
+  margin-top: 1vh;
+  margin-left: 14vw;
+  height: 41.3vh;
+  width: 17.7vw;
+  gap: 0.1vh;
+  flex-direction: column;
+}
+.menu-cursor {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background-color: var(--cursor); /* A golden glow or a custom image */
+  transform: translate(-50%, -50%); /* Centers the cursor on the mouse */
+  transition: top 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px gold;
+  pointer-events: none; /* Makes the cursor non-interactive */
+  z-index: 15;
+  animation: flash 4s infinite ease-in-out;
+}
+
+@keyframes flash {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.link {
+  /* Base styles for all links */
+  display: flex;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out; /* Use 'all' for all properties */
+  color: #333;
+  opacity: 0.7;
+}
+
+.link.active {
+  /* Styles for the selected/active link */
+  transform: translateX(0.5vw); /* Changed to a more visible value */
+  font-weight: bold;
+  opacity: 1;
+  /* Additional visual indicator for the active link */
+}
+#menu-item{
+  font-family: 'Roboto';
+  font-weight: 300;
+  height: 4vh;
+  margin: 0.5vh 0;
+  width: 17vw;
+  min-width: 320px;
+  background-color: black;
+  color: white;
+  display: flex;
+  padding-left: 1vw;
+  padding-bottom: 0.5vh;
+  justify-content: left;
+  align-items: flex-end;
+  font-size: 32px;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  border-top: 5px solid white;
+  border-left: 5px solid white;
+  text-shadow: 3px 3px 6px #000000;
+  opacity: 0.87;
+}
+
+html {
+    visibility: visible;
+    opacity: 1;
+}
