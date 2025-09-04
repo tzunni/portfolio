@@ -17,6 +17,7 @@ const SubSkills2 = () => <h3>This is the content for Sub-skill 2.</h3>;
 function App() {
   const menuData = {
     main: [
+      // { id: 'overview', title: 'Overview', content: <OverviewContent /> },
       { id: 'overview', title: 'Overview', content: <OverviewContent /> },
       { id: 'skills', title: 'Skills' },
       { id: 'projects', title: 'Projects' },
@@ -92,12 +93,16 @@ function App() {
 
     if (linkId === 'back') {
       setTimeout(() => {
+        const clickSound = new Audio('/back_sound.mp3'); 
+        clickSound.play(); // Play the sound immediately
         setIsMenuHidden(false);
         setIsMainMenu(true);
         setActiveLink('overview');
       }, 250);
     } else if (menuData.subMenus[linkId]) {
       setTimeout(() => {
+        const clickSound = new Audio('/click_sound.mp3'); 
+        clickSound.play(); // Play the sound immediately
         setIsMenuHidden(false);
         setIsMainMenu(false);
         setCurrentSubMenu(linkId);
@@ -105,6 +110,8 @@ function App() {
       }, 250);
     } else {
       setTimeout(() => {
+        const clickSound = new Audio('/click_sound.mp3'); 
+        clickSound.play(); // Play the sound immediately
         setIsMenuHidden(false);
         setActiveLink(linkId);
       }, 250);
