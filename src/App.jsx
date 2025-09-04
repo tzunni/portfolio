@@ -39,6 +39,7 @@ function App() {
   const [currentSubMenu, setCurrentSubMenu] = useState(null);
   const [cursorPosition, setCursorPosition] = useState({ top: 19.656, left: 31 });
   const [isMenuHidden, setIsMenuHidden] = useState(false);
+  const [isContentHidden, setIsContentHidden] = useState(true);
   const menuRef = useRef(null);
   const cursorRef = useRef(null);
 
@@ -98,6 +99,7 @@ function App() {
         setIsMenuHidden(false);
         setIsMainMenu(true);
         setActiveLink('overview');
+        setIsContentHidden(true);
       }, 250);
     } else if (menuData.subMenus[linkId]) {
       setTimeout(() => {
@@ -107,6 +109,7 @@ function App() {
         setIsMainMenu(false);
         setCurrentSubMenu(linkId);
         setActiveLink(linkId);
+        setIsContentHidden(false);
       }, 250);
     } else {
       setTimeout(() => {
@@ -114,6 +117,7 @@ function App() {
         clickSound.play(); // Play the sound immediately
         setIsMenuHidden(false);
         setActiveLink(linkId);
+        setIsContentHidden(true);
       }, 250);
     }
   };
@@ -186,7 +190,7 @@ function App() {
         ></div>
         {renderCurrentMenu()}
       </div>
-      <div id="content-container">
+      <div id="content-container" className={isContentHidden ? 'hidden' : ''}>
         {renderContent()}
       </div>
     </div>
