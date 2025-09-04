@@ -40,6 +40,7 @@ function App() {
   const [cursorPosition, setCursorPosition] = useState({ top: 19.656, left: 31 });
   const [isMenuHidden, setIsMenuHidden] = useState(false);
   const [isContentHidden, setIsContentHidden] = useState(true);
+  const [isPlayerHidden, setIsPlayerHidden] = useState(false);
   const menuRef = useRef(null);
   const cursorRef = useRef(null);
 
@@ -100,6 +101,7 @@ function App() {
         setIsMainMenu(true);
         setActiveLink('overview');
         setIsContentHidden(true);
+        setIsPlayerHidden(false);
       }, 250);
     } else if (menuData.subMenus[linkId]) {
       setTimeout(() => {
@@ -110,6 +112,7 @@ function App() {
         setCurrentSubMenu(linkId);
         setActiveLink(linkId);
         setIsContentHidden(false);
+        setIsPlayerHidden(true);
       }, 250);
     } else {
       setTimeout(() => {
@@ -118,6 +121,7 @@ function App() {
         setIsMenuHidden(false);
         setActiveLink(linkId);
         setIsContentHidden(true);
+        setIsPlayerHidden(true);
       }, 250);
     }
   };
@@ -178,6 +182,15 @@ function App() {
 
   return (
     <div id="main-content">
+      <img src="src/assets/img.png" id="player-icon" className={isPlayerHidden ? 'hidden' : ''} />
+        <div id="player" className={isPlayerHidden ? 'hidden' : ''}>
+          <p id="player-text">Keith</p>
+          <div id="player-line"></div>
+          <div className={"player-subtext"}>
+            <p>Lv</p>
+            <p>21</p>
+          </div>
+        </div>
       <div id="menu-bar" ref={menuRef} className={isMenuHidden ? 'hidden' : ''}>
         <div 
           className="menu-cursor"

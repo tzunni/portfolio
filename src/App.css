@@ -95,3 +95,58 @@ html {
     visibility: visible;
     opacity: 1;
 }
+
+
+#player{
+  position: absolute;
+  background-color: black;
+  height: 10vh;
+  width: 9vw;
+  bottom: 20vh;
+  left: 50vw;
+  z-index: 5;
+  opacity: 0.87;
+  --s: 30px;
+  clip-path: polygon(var(--s) 0, 100% 0, 100% 100%, 0 100%, 0 var(--s));
+}
+#player.hidden {
+  display: none; /* Hides the player */
+}
+#player-icon{
+  position: absolute;
+  width: 25vw;
+  height: auto;
+  bottom: 22vh;
+  left: 46vw;
+  z-index: 4;
+}
+#player-icon.hidden {
+  display: none; /* Hides the player */
+}
+#player-text{
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 32px;
+  color: white;
+  text-align: center;
+  padding-top: 1.5vh;
+  margin: 0;
+}
+#player-line{
+  background-color: gray;
+  height: 2px;
+  width: 5vw;
+  margin: 0 auto;
+  margin-top: 0.5vh;
+  padding-bottom: 0;
+}
+.player-subtext{
+  font-family: 'Roboto';
+  font-weight: 200;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: start;
+  color: rgb(217, 255, 0);
+  margin: 0;
+}
