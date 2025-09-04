@@ -13,9 +13,18 @@
   width: 17.7vw;
   gap: 0.1vh;
   flex-direction: column;
+  transition: left 0.2s ease-in-out;
+  position: relative;
+  left: 0;
+}
+.link{
+  cursor: pointer;
+}
+#menu-bar.hidden {
+  left: -40vw; /* Hides the menu off-screen */
 }
 .menu-cursor {
-  position: fixed;
+  position: relative;
   width: 5px;
   height: 5px;
   background-color: var(--cursor); /* A golden glow or a custom image */
@@ -37,24 +46,8 @@
   }
 }
 
-.link {
-  /* Base styles for all links */
-  display: flex;
-  position: relative;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out; /* Use 'all' for all properties */
-  color: #333;
-  opacity: 0.7;
-}
 
-.link.active {
-  /* Styles for the selected/active link */
-  transform: translateX(0.5vw); /* Changed to a more visible value */
-  font-weight: bold;
-  opacity: 1;
-  /* Additional visual indicator for the active link */
-}
-#menu-item{
+.menu-item{
   font-family: 'Roboto';
   font-weight: 300;
   height: 4vh;
@@ -74,7 +67,6 @@
   border-top: 5px solid white;
   border-left: 5px solid white;
   text-shadow: 3px 3px 6px #000000;
-  opacity: 0.87;
 }
 
 html {
