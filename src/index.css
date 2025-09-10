@@ -28,7 +28,7 @@
 }
 
 body {
-  background-image: url(./assets/tokyoc.jpg);
+  background-image: url(/tokyoc.jpg);
   background-size: cover;
   background-position: 0% 40%;
 }

@@ -292,7 +292,7 @@ function App() {
 
   return (
     <div id="main-content">
-      <img src="src/assets/img.png" id="player-icon" className={isPlayerHidden ? 'hidden' : ''} />
+      <img src="/img.png" id="player-icon" className={isPlayerHidden ? 'hidden' : ''} />
         <div id="player" className={isPlayerHidden ? 'hidden' : ''}>
           <p id="player-text">Keith</p>
           <div id="player-line"></div>
