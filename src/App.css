@@ -27,6 +27,9 @@
 #content-container.hidden {
   display: none; /* Hides the content container */
 }
+h3{
+  font-weight: 300;
+}
 #menu-bar{
   position: relative;
   margin-top: 1vh;
