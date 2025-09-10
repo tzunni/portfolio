@@ -153,3 +153,13 @@ html {
   color: rgb(217, 255, 0);
   margin: 0;
 }
+#mute{
+  cursor: pointer;
+  position: relative;
+  top: -10vh;
+  left: -5vw;
+  height: 5vh;
+  width: auto;
+  color: white;
+  z-index: 1000;
+}
