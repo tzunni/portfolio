@@ -27,7 +27,7 @@ Web Back-End Engineering, iOS Mobile Dev. Programming, Intro. to Data Sci. and B
 const ProjectsContent = () => <h3>This is the Projects page. It is still WIP.</h3>;
 const TaskSocial = () => <h3>TaskSocial is my senior capstone project being built in React Native and Go, and is a social media app that is meant to gamify, share, and encourage physical activity.</h3>;
 const TypeFighter = () => <h3>TypeFighter is a joint project with Patrick Tang built in Flask and ReactJS, and is a typing test designed around book prompts. It features a boss and a leaderboard to encourage players to play with and against each other.</h3>;
-const ApexRPC = () => <h3>ApexRPC is an open source Discord Rich Presence Client that broadcasts the Apex Legends in game status onto Discord. It is created around reverse engineering the Steam API, and usees NodeJS to fetch and broadcast.</h3>;
+const ApexRPC = () => <h3>ApexRPC is an open source Discord Rich Presence Client that broadcasts the Apex Legends in game status onto Discord. It is created around reverse engineering the Steam API, and uses NodeJS to fetch and broadcast.</h3>;
 const BlueTeamCTF = () => <h3>This Blue Team CTF used file analysis, tracking suites, and web vulnerabilities to find flags in a team competition, and we placed 13th/354 teams.</h3>;
 const WorkExpContent = () => <h3>This is the Work Experience page.</h3>;
 const CEDA = () => 
